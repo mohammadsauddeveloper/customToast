@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 
 object CustomToast {
     private var toast: Toast?=null
-    fun Context.showToast(message: String,backgroundColor: Int= android.R.color.white,textColor:Int = android.R.color.black){
+    fun Context.showToast(message: String,backgroundColor: Int,textColor:Int){
         val view = LayoutInflater.from(this).inflate(R.layout.custom_toast,null)
         val text = view.findViewById<TextView>(R.id.tvToast)
         val card = view.findViewById<LinearLayout>(R.id.card)
