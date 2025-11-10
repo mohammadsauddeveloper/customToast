@@ -11,12 +11,13 @@ import androidx.core.content.ContextCompat
 
 object CustomToast {
     private var toast: Toast?=null
-    fun Context.showToast(message: String,color: Int){
+    fun Context.showToast(message: String,backgroundColor: Int= android.R.color.white,textColor:Int = android.R.color.black){
         val view = LayoutInflater.from(this).inflate(R.layout.custom_toast,null)
         val text = view.findViewById<TextView>(R.id.tvToast)
         val card = view.findViewById<LinearLayout>(R.id.card)
         text.text = message
-        card.setBackgroundColor(ContextCompat.getColor(this, color))
+        card.setBackgroundColor(ContextCompat.getColor(this, backgroundColor))
+        text.setTextColor(ContextCompat.getColor(this, textColor))
         toast?.cancel()
         toast = Toast(this)
         toast?.duration = Toast.LENGTH_SHORT
