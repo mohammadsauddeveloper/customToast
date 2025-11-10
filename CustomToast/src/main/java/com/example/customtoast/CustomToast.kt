@@ -3,6 +3,7 @@ package com.example.customtoast
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -13,9 +14,9 @@ object CustomToast {
     fun Context.showToast(message: String,color: Int){
         val view = LayoutInflater.from(this).inflate(R.layout.custom_toast,null)
         val text = view.findViewById<TextView>(R.id.tvToast)
-        val card = view.findViewById<CardView>(R.id.card)
+        val card = view.findViewById<LinearLayout>(R.id.card)
         text.text = message
-        card.setCardBackgroundColor(ContextCompat.getColor(this, color))
+        card.setBackgroundColor(ContextCompat.getColor(this, color))
         toast?.cancel()
         toast = Toast(this)
         toast?.duration = Toast.LENGTH_SHORT
