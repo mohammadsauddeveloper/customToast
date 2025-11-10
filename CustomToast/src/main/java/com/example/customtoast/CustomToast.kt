@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 
 object CustomToast {
     private var toast: Toast?=null
@@ -14,7 +15,7 @@ object CustomToast {
         val text = view.findViewById<TextView>(R.id.tvToast)
         val card = view.findViewById<CardView>(R.id.card)
         text.text = message
-        card.setBackgroundResource(color)
+        card.setCardBackgroundColor(ContextCompat.getColor(this, color))
         toast?.cancel()
         toast = Toast(this)
         toast?.duration = Toast.LENGTH_SHORT
