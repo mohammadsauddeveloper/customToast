@@ -14,7 +14,7 @@ object CustomToast {
         val text = view.findViewById<TextView>(R.id.tvToast)
         val card = view.findViewById<CardView>(R.id.card)
         text.text = message
-        card.setBackgroundColor(color)
+        card.setBackgroundResource(color)
         toast?.cancel()
         toast = Toast(this)
         toast?.duration = Toast.LENGTH_SHORT
